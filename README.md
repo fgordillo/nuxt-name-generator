@@ -1,42 +1,21 @@
-# Nuxt 3 Minimal Starter
+# Baby name generator
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+This project is inspired by the [Baby Name Generator](https://github.com/harblaith7/Nuxt3-Course-Udemy/tree/main/01-Baby-Name-Generator) created by [@harblaith7](https://github.com/harblaith7) for his Udemy course.
 
-## Setup
+The purpose of the app, besides practicing Nuxt 3, is to help international couples pick their baby name.
 
-Make sure to install the dependencies:
+The app was deployed in Netlify: https://baby-name-selector.netlify.app/
 
-```bash
-# yarn
-yarn install
+To run the app locally, follow the next steps:
 
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
+1. Install the dependencies:
+```
+npm ci
 ```
 
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
+2. Compile the code:
+```
 npm run dev
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+3. Open the app in your browser [http://localhost:3000/](http://localhost:3000/)
