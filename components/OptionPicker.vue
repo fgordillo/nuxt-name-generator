@@ -16,28 +16,18 @@ function select(option) {
 </script>
 
 <template>
-    <fieldset>
-        <h4>{{ title }}</h4>
-        <option-button
-            v-for="option of options"
-            :key="option"
-            :selected="value === option"
-            class="button"
-            @click="select(option)"
-        >
-            {{ option }}
-        </option-button>
+    <fieldset class="border-0">
+        <h4 class="text-2xl text-red mb-4">{{ title }}</h4>
+        <div class="mb-5">
+            <option-button
+                v-for="option of options"
+                :key="option"
+                :selected="value === option"
+                class="sm:first:rounded-l-full sm:last:rounded-r-full"
+                @click="select(option)"
+            >
+                {{ option }}
+            </option-button>
+        </div>
     </fieldset>
 </template>
-
-<style scoped>
-fieldset button:first-of-type {
-  border-radius: 1rem 0 0 1rem;
-}
-fieldset button:last-of-type {
-  border-radius: 0 1rem 1rem 0;
-}
-fieldset {
-    border: none;
-}
-</style>
