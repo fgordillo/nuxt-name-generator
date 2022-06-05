@@ -21,7 +21,7 @@ export enum Popularity {
 export enum Length {
   SHORT = "Short",
   LONG = "Long",
-  ALL = "All",
+  ALL = "I don't care",
 }
 
 export enum Origin {

@@ -3,6 +3,7 @@ const props = defineProps({
     title: String,
     options: Array,
     value: String,
+    id: String,
 })
 const emit = defineEmits(["select"])
 
@@ -16,7 +17,10 @@ function select(option) {
 </script>
 
 <template>
-    <fieldset class="border-0">
+    <fieldset
+        :id="id"
+        class="border-0"
+    >
         <h4 class="text-2xl text-red mb-4">{{ title }}</h4>
         <div class="mb-5">
             <option-button
