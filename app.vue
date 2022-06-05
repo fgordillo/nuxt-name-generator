@@ -108,7 +108,7 @@ async function removeName(name) {
   <div class="sm:max-w-lg sm:mx-auto mx-5 text-center text-red-800 my-8">
     <div class="flex items-center mb-5 flex-col sm:flex-row">
       <img
-        src="baby.png"
+        src="/img/baby.png"
         alt="drawing representing a baby"
         class="w-40 mb-5 sm:mb-0"
       />
