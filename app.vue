@@ -90,6 +90,8 @@ async function removeName(name) {
   let idx = chosenNames.value.findIndex((s) => s === name)
   chosenNames.value = chosenNames.value.filter((s) => s !== name);
   await nextTick();
+  // No need to focus the last element since it's the winning name
+  if (chosenNames.value.length === 1) return
   if (idx === chosenNames.value.length) {
     idx--
   }
@@ -106,7 +108,7 @@ async function removeName(name) {
   <div class="sm:max-w-lg sm:mx-auto mx-5 text-center text-red-800 my-8">
     <div class="flex items-center mb-5 flex-col sm:flex-row">
       <img
-        src="assets/baby.png"
+        src="baby.png"
         alt="drawing representing a baby"
         class="w-40 mb-5 sm:mb-0"
       />
@@ -174,6 +176,6 @@ async function removeName(name) {
 }
 
 .the-one {
-  @apply relative after:absolute after:content-[''] after:inset-0 after:rounded-[inherit] after:ring-4 after:ring-offset-2 after:ring-amber-400 after:animate-ping;
+  @apply relative text-3xl after:absolute after:content-[''] after:inset-0 after:rounded-[inherit] after:ring-4 after:ring-offset-2 after:ring-amber-400 after:animate-ping;
 }
 </style>
