@@ -53,13 +53,11 @@ const selection = reactive<OptionsState>({
 
 let chosenNames = ref<string[]>([])
 
-function submit() {
-  chosenNames.value = names.filter(({ gender, popularity, length, origin }) => {
-    return gender === selection.gender &&
-           popularity === selection.popularity &&
-           (selection.length === Length.ALL || length === selection.length) &&
-           origin === selection.origin
-  }).map(({ name }) => name)
+async function submit() {
+  chosenNames.value = await $fetch("api/names", {
+    method: "POST",
+    body: selection
+  })
 }
 
 function removeName(name) {
@@ -74,7 +72,6 @@ function removeName(name) {
     <transition-group
       tag="form"
       name="fade"
-      class="options-container"
       @submit.prevent="submit"
     >
       <option-picker
@@ -89,8 +86,9 @@ function removeName(name) {
 
       <button
         v-if="showSubmitButton"
-        class="bg-primary rounded-lg p-3 text-white cursor-pointer"
+        class="bg-red-500 rounded-lg p-3 text-white cursor-pointer"
         type="submit"
+        key="submit"
       >
         Find names
       </button>
